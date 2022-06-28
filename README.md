@@ -7,7 +7,9 @@
 #### ejecutar npm install
 #### para instalar el paquete utilizado para consumir dicha api
 
+
 ### Ejecutar aplicacion con: npm start
+
 
 ### rutas:
 #### obtener stocks: /getStocks
