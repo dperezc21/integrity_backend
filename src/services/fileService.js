@@ -16,8 +16,20 @@ class StockService {
             const logo = await responseLogo.json();
 
             const {url} = logo;
-            const { symbol, latestPrice, companyName } = data;
-            return { symbol, latestPrice, companyName, url, statePrice:"" }
+            let { symbol, latestPrice, companyName, previousClose } = data;
+            let statePrice;
+            if(previousClose > latestPrice){
+                statePrice = "-"
+            }else{
+                statePrice = "+"
+            }
+            if(companyName.split(' ').length > 1){
+                companyName = companyName.split(' ')[0];
+            }
+            console.log(data)
+            console.log(companyName)
+
+            return { symbol, latestPrice, companyName, url, statePrice }
         } catch (error) {
             throw new Error(error)
         }

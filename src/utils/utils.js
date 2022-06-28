@@ -6,6 +6,14 @@ const pathFile = path.join(__dirname + '/stocks.json')
 
 
 class Utils {
+
+    saveStock(data) {
+        writeFile(pathFile, data, 'utf8', (error) => {
+            if (error) thow("Error al escribir en el archivo")
+            console.log("datos guardados")
+        })
+
+    }
     updatePrice(stocks, getStock, result) {
         for (const iterator in stocks) {
             if(iterator == null) continue;
@@ -25,10 +33,7 @@ class Utils {
                 }
             }
         }
-        if (result) {
-
-            saveStock(JSON.stringify(updatedSocket))
-        }
+        
         return result;
     }
 
@@ -37,13 +42,7 @@ class Utils {
         const data = readFileSync(pathFile, "utf-8");
         return data
     }
-    saveStock(data) {
-        writeFile(pathFile, data, 'utf8', (error) => {
-            if (error) thow("Error al escribir en el archivo")
-            console.log("datos guardados")
-        })
-
-    }
+    
 }
 
 
