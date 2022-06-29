@@ -7,6 +7,7 @@
 #### ejecutar npm install
 #### para instalar el paquete utilizado para consumir dicha api
 
+#### lococar token de iexcloud en services/fileService.js
 
 ### Ejecutar aplicacion con: npm start
 
